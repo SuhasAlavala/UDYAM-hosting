@@ -146,7 +146,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR + '/static/UDYAM-21/Css'),
     os.path.join(BASE_DIR + '/static/UDYAM-21/fonts'),
     os.path.join(BASE_DIR + '/static/UDYAM-21/Javascript'),
-    os.path.join(BASE_DIR + '/static/UDYAM-21/Vendor'),
+    os.path.join(BASE_DIR + '/static/UDYAM-21/vendor'),
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
