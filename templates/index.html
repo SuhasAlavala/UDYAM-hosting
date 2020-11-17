@@ -259,9 +259,6 @@
                         <li class="clickme">
                             <a href="#contactus" onclick="smoothScroll(document.getElementById('ourcontact'))">Contact Us</a>
                         </li>
-                        <li class="clickme">
-                            <a href="{% url 'login' %}">Sign In</a>
-                        </li>
                         {% if user.is_authenticated %}
                             <li class="clickme">
                                 <a href="{% url 'dashboard' %}">Dashboard</a>
