@@ -35,11 +35,9 @@ def LoginView(request):
     if request.method == 'POST':
         form1 = AuthenticationForm()
         form2 = SignUpForm()
-        print(request.POST.get('submit'))
         if request.POST.get('submit') == 'Login':
             form1 = AuthenticationForm(request=request, data = request.POST)
             if form1.is_valid():
-                print("YES")
                 email = form1.cleaned_data.get('username')
                 password = form1.cleaned_data.get('password')
                 print(email, password)
@@ -48,14 +46,11 @@ def LoginView(request):
                 if user is not None:
                     login(request, user)
                     return redirect('dashboard')
-                else:
-                    return render(request, 'login.html', {'error': True})
+            else:
+                return render(request, 'login.html', {'form1':form1, 'form2': form2, 'error': 'error'})
         elif request.POST.get('submit') == 'Sign_up':
-            print('signin')
             form2 = SignUpForm(request.POST)
-            print(form2)
             if form2.is_valid():
-                print('valid')
                 user = form2.save(commit=False)
                 user.is_active = False
                 user.save()
